@@ -42,7 +42,7 @@ TouchButton buttons[] = {
 const int NUM_BUTTONS = sizeof(buttons) / sizeof(buttons[0]);
 int main_selection = 0; //for current cursor position in main menu
 int bonus_selection = 0; //for current cursor position in bonus menu
-const int BONUS_MAX = 1; //change this constant if you add more options for the bonus menu
+const int BONUS_MAX = 2; //change this constant if you add more options for the bonus menu
 int scene = 0; //keeps track of current "scene"
               //0 for main menu
               //1 for How To
@@ -83,6 +83,11 @@ bool touchTest(int i) {
 
 void displayLogo() {
   tft.drawBitmap(0,0,uah_logo,320,170,ST77XX_WHITE);
+}
+
+void drawGithub() {
+  tft.fillScreen(ST77XX_BLACK);
+  tft.drawBitmap(85,10,github,150,150,ST77XX_WHITE);
 }
 
 void drawFaculty(int f) {
@@ -400,15 +405,15 @@ void drawBonusMenuSelect() {
   tft.setCursor(5,20);
   tft.print("ECE Faculty");
 
-  tft.drawRect(0,35,130,25,ST77XX_WHITE); //Return
+  tft.drawRect(0,35,130,25,ST77XX_WHITE); //Github
   tft.setCursor(5,45);
+  tft.print("Github");
+
+  tft.drawRect(0,60,130,25,ST77XX_WHITE); //Return
+  tft.setCursor(5,70);
   tft.print("Return");
 
   // bonus menu can be expanded further, just make sure that the bonus selection variable can go up to the correct amount
-  // tft.drawRect(0,60,130,25,ST77XX_WHITE); //menu option 3
-  // tft.setCursor(5,70);
-  // tft.print("");
-
   // tft.drawRect(0,85,130,25,ST77XX_WHITE); //menu option 4
   // tft.setCursor(5,95);
   // tft.print("");
@@ -430,15 +435,15 @@ void drawBonusMenuSelect() {
       tft.print("ECE Faculty");
       break;
     case 1:
-      tft.fillRect(0,35,150,25,ST77XX_WHITE); //Return select
+      tft.fillRect(0,35,150,25,ST77XX_WHITE); //Github select
       tft.setCursor(10,45);
+      tft.print("Github");
+      break;
+    case 2:
+      tft.fillRect(0,60,150,25,ST77XX_WHITE); //Return select
+      tft.setCursor(10,70);
       tft.print("Return");
       break;
-    // case 2:
-    //   tft.fillRect(0,60,150,25,ST77XX_WHITE); //option 3
-    //   tft.setCursor(10,70);
-    //   tft.print("");
-    //   break;
     // case 3:
     //   tft.fillRect(0,85,150,25,ST77XX_WHITE); //option 4
     //   tft.setCursor(10,95);
@@ -1961,10 +1966,13 @@ void enterBonusScene(int s) {
       drawFaculty(faculty);
       break;
     case 1:
-      //return to main
-      returnMainMenu();
+      //load github scene
+      scene = 8;
+      drawGithub();
       break;
     case 2:
+      //return to main
+      returnMainMenu();
       break;
     case 3:
       break;
@@ -2169,6 +2177,9 @@ void loop() {
     case 7: //Faculty and staff
       if (touchTest(4)){update_faculty(0);}  // left
       if (touchTest(5)){update_faculty(1);}  // right
+      if(touchTest(1)){scene = 5; drawBonusMenu();}//B
+      break;
+    case 8: //Github QR
       if(touchTest(1)){scene = 5; drawBonusMenu();}//B
       break;
     default:
