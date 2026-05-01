@@ -25,9 +25,7 @@ Some additions that could be made using the capabilities of the ESP32-S3:
 
 ## Demo Videos
 
-<img src="https://www.youtube.com/watch?v=7o9A-FuoEWo" alt="activity demo video" width="240"
-height="180" border="10" />
-</a>
+https://www.youtube.com/watch?v=7o9A-FuoEWo
 
 ## How to install this project
 
