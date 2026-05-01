@@ -51,7 +51,7 @@ https://www.youtube.com/watch?v=7o9A-FuoEWo
 # Altering the code
 
 It will be easiest if you edit this code within an installed verion of the Arduino IDE. The ChargerCardSoftware.ino file is where all code for the project currently resides. 
-The bitmaps.h file has all the bitmaps used by the primary ino file. 
+The bitmaps.h file has all the bitmaps used by the primary ino file. The code is seperate into the following sections: framework drawing functions, cyber activity, ee activity, cpe activity, and framework functions. Global variables can be found at the top of each section (i.e globals used by the cyber activity are found at the top of the cyber activity section).
 
 The setup() and loop() functions are the core of any Arduino code and are located at the very bottom of ChargerCardSoftware.ino. Additional functions and their descriptions are listed below:
 
