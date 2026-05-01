@@ -52,6 +52,7 @@ int scene = 0; //keeps track of current "scene"
               //5 for Bonus
               //6 for About
               //7 for ECE Faculty page
+              //8 for QR code page
 int colorIndex = 0;
 int faculty = 0;
 
@@ -1032,28 +1033,8 @@ void setupLevel5();
 void handleNodeTouch(int nodeId);
 bool checkCircuitComplete();
 
-void eeMoveSelectionLeft();
-void eeMveSelectionRight();
 void selectCurrentNode();
 void undoMove();
-
-void eeMoveSelectionLeft() {
-  int activeNodes = levels[currentLevel].nodeCount;
-  selectedNode--;
-  if (selectedNode < 0) {
-    selectedNode = activeNodes - 1;
-  }
-  drawCircuit();
-}
-
-void eeMoveSelectionRight() {
-  int activeNodes = levels[currentLevel].nodeCount;
-  selectedNode++;
-  if (selectedNode >= activeNodes) {
-    selectedNode = 0;
-  }
-  drawCircuit();
-}
 
 void selectCurrentNode() {
   handleNodeTouch(selectedNode);
@@ -2132,10 +2113,10 @@ void loop() {
       }
 
       if (touchTest(4)) {          // LEFT
-        eeMoveSelectionLeft();
+        MoveSelectionLeft();
       }
       else if (touchTest(5)) {     // RIGHT
-        eeMoveSelectionRight();
+        MoveSelectionRight();
       }
       else if (touchTest(0)) {     // A
         selectCurrentNode();
