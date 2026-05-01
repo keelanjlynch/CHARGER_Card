@@ -35,11 +35,11 @@ https://www.youtube.com/watch?v=7o9A-FuoEWo
 
 ## Opening this project in KiCad (we recommend using V2 of the design)
 
-1. Open Buisness_Card_PCB.kicad_pro
+1. Open Buisness_Card_PCB.kicad_pro in KiCad
 
 ## Opening this project in Ardunio
 
-1. Open ChargerCardSoftware.ino
+1. Open ChargerCardSoftware.ino in Arduino IDE
 2. In Board Manager, install esp32 by Espressif Systems
 3. In Library Manager, install "Adafruit GFX Library" and "Adafruit ST7735 and ST7789 Library"
 4. Ensure that the CHARGER Card is plugged into your computer via USB
