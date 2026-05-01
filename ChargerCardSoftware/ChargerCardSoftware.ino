@@ -1033,8 +1033,28 @@ void setupLevel5();
 void handleNodeTouch(int nodeId);
 bool checkCircuitComplete();
 
+void eeMoveSelectionLeft();
+void eeMveSelectionRight();
 void selectCurrentNode();
 void undoMove();
+
+void eeMoveSelectionLeft() {
+  int activeNodes = levels[currentLevel].nodeCount;
+  selectedNode--;
+  if (selectedNode < 0) {
+    selectedNode = activeNodes - 1;
+  }
+  drawCircuit();
+}
+
+void eeMoveSelectionRight() {
+  int activeNodes = levels[currentLevel].nodeCount;
+  selectedNode++;
+  if (selectedNode >= activeNodes) {
+    selectedNode = 0;
+  }
+  drawCircuit();
+}
 
 void selectCurrentNode() {
   handleNodeTouch(selectedNode);
@@ -2113,10 +2133,10 @@ void loop() {
       }
 
       if (touchTest(4)) {          // LEFT
-        MoveSelectionLeft();
+        eeMoveSelectionLeft();
       }
       else if (touchTest(5)) {     // RIGHT
-        MoveSelectionRight();
+        eeMoveSelectionRight();
       }
       else if (touchTest(0)) {     // A
         selectCurrentNode();
