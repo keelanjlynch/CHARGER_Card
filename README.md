@@ -7,8 +7,8 @@ The code for the project was written in Arduino IDE and the PCB design/layout wa
 
 * Three educational activities relating to ECE disciplines included below:
 * A Cyber Security activity of brute force byte decryption (similar to mastermind or wordle)
-* An Elictical Engineering connect-the-dots activity wheree user connect electrical components to create an electrical connection
-* A Computer Engineering activity adjusting inputs and logic gates to get the desired output
+* An Electrical Engineering connect-the-dots activity where user connect electrical components to create an electrical connection
+* A Computer Engineering activity where user adjusts inputs and logic gates to get the desired output
 * Capacative touch calibration
 * Menu selection
 * Bitmap rendering
