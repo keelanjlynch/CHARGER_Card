@@ -43,6 +43,7 @@ const int NUM_BUTTONS = sizeof(buttons) / sizeof(buttons[0]);
 int main_selection = 0; //for current cursor position in main menu
 int bonus_selection = 0; //for current cursor position in bonus menu
 const int BONUS_MAX = 2; //change this constant if you add more options for the bonus menu
+int faculty = 0; //numbered 0-20 for all ECE faculty
 int scene = 0; //keeps track of current "scene"
               //0 for main menu
               //1 for How To
@@ -53,8 +54,6 @@ int scene = 0; //keeps track of current "scene"
               //6 for About
               //7 for ECE Faculty page
               //8 for QR code page
-int colorIndex = 0;
-int faculty = 0;
 
 void calibrateTouch() {
   for (int i = 0; i < NUM_BUTTONS; i++) {
@@ -414,7 +413,7 @@ void drawBonusMenuSelect() {
   tft.setCursor(5,70);
   tft.print("Return");
 
-  // bonus menu can be expanded further, just make sure that the bonus selection variable can go up to the correct amount
+  // bonus menu can be expanded further, just make sure that the bonus selection variable can go up to the correct amount (a global constant called BONUS_MAX)
   // tft.drawRect(0,85,130,25,ST77XX_WHITE); //menu option 4
   // tft.setCursor(5,95);
   // tft.print("");
@@ -423,7 +422,7 @@ void drawBonusMenuSelect() {
   // tft.setCursor(5,120);
   // tft.print("");
 
-  // tft.drawRect(0,135,130,25,ST77XX_WHITE); //Tmenu option 6
+  // tft.drawRect(0,135,130,25,ST77XX_WHITE); //menu option 6
   // tft.setCursor(5,145);
   // tft.print("");
   
