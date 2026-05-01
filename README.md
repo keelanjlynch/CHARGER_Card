@@ -55,8 +55,8 @@ The bitmaps.h file has all the bitmaps used by the primary ino file.
 
 The setup() and loop() functions are the core of any Arduino code and are located at the very bottom of ChargerCardSoftware.ino. Additional functions and their descriptions are listed below:
 
-* calibrateTouch() - ran in setup, establishes a baseline for the capacative touch inputs
-* updateTouchReadings() - ran in loop to get a current reading from the touch inputs
+* calibrateTouch() - called in setup, establishes a baseline for the capacative touch inputs
+* updateTouchReadings() - called in loop to get a current reading from the touch inputs
 * touchTest(int i) - compares the given touch point i with the established baseline
 * displayLogo() - called to display full sized UAH logo
 * drawGithub() - displays bitmap of QR code to this github
